@@ -11,7 +11,7 @@ import okhttp3.Interceptor;
  * @author minggo(戴统民)
  * @date 2020/9/15
  */
-public class RequestConfig {
+public final class RequestConfig {
     /**必传参数**/
     public static boolean DEBUG;
     /**Retrofit**/

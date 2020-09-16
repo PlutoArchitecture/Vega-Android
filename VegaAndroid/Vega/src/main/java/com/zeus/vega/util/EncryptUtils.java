@@ -1,5 +1,7 @@
 package com.zeus.vega.util;
 
+import android.annotation.SuppressLint;
+
 import java.security.Key;
 import java.security.MessageDigest;
 import java.security.spec.AlgorithmParameterSpec;
@@ -14,6 +16,7 @@ import javax.crypto.spec.IvParameterSpec;
  * @author minggo
  * @time 2014-12-2下午2:15:02
  */
+@SuppressLint({ "DefaultLocale", "TrulyRandom" })
 public class EncryptUtils {
 
 	public static final String ALGORITHM_DES = "DES/CBC/PKCS5Padding";
@@ -61,12 +64,12 @@ public class EncryptUtils {
      * @param data 待加密字符串
      * @param key  加密私钥，长度不能够小于8位
      * @return 加密后的字节数组，一般结合Base64编码使用
+     * @throws InvalidAlgorithmParameterException 
      * @throws Exception
      */
     public static String encode(String key, String data) {
-    	if(data == null) {
-			return null;
-		}
+    	if(data == null)
+    		return null;
     	try{
 	    	DESKeySpec dks = new DESKeySpec(key.getBytes());
 	    	SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
@@ -93,9 +96,8 @@ public class EncryptUtils {
      * @throws Exception 异常
      */
     public static String decode(String key, String data) {
-    	if(data == null) {
-			return null;
-		}
+    	if(data == null)
+    		return null;
         try {
 	    	DESKeySpec dks = new DESKeySpec(key.getBytes());
 	    	SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("DES");
@@ -122,18 +124,16 @@ public class EncryptUtils {
 		String stmp;
 		for (int n = 0; b!=null && n < b.length; n++) {
 			stmp = Integer.toHexString(b[n] & 0XFF);
-			if (stmp.length() == 1) {
+			if (stmp.length() == 1)
 				hs.append('0');
-			}
 			hs.append(stmp);
 		}
 		return hs.toString().toUpperCase();
 	}
     
     private static byte[] hex2byte(byte[] b) {
-        if((b.length%2)!=0) {
-			throw new IllegalArgumentException();
-		}
+        if((b.length%2)!=0)
+            throw new IllegalArgumentException();
 		byte[] b2 = new byte[b.length/2];
 		for (int n = 0; n < b.length; n+=2) {
 		    String item = new String(b,n,2);

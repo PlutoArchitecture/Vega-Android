@@ -55,6 +55,15 @@ public class RxRequestUtil {
     }
 
     /**
+     * 异步请求（io执行，切换回main线程）
+     * @param subscriber 订阅者
+     */
+    public static  void call2(Observable observable, DisposableObserver subscriber) {
+        observable.compose(applySchedulers())
+                .subscribe(subscriber);
+    }
+
+    /**
      * 在当前同步请求
      * @param subscriber 订阅者
      */

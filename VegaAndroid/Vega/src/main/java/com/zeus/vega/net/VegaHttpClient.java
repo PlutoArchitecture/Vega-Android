@@ -1,5 +1,7 @@
 package com.zeus.vega.net;
 
+import android.util.Log;
+
 import com.zeus.vega.net.cofig.RequestConfig;
 import com.zeus.vega.net.factory.BaseUrlCallFactory;
 import com.zeus.vega.net.interceptor.LogInterceptor;
@@ -8,11 +10,13 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+ * 网络请求客户端
  * @author minggo(戴统民)
  * @date 2020/9/15
  */
@@ -24,6 +28,10 @@ public class VegaHttpClient {
     private OkHttpClient.Builder okHttpBuilder;
 
     private VegaHttpClient() {
+
+    }
+
+    public void init(){
         initOkHttpBuilder();
         addInterceptors();
         initOkHttpClient();
@@ -50,6 +58,16 @@ public class VegaHttpClient {
         }
         // 添加日记拦截器
         okHttpBuilder.addInterceptor(new LogInterceptor("VegaHttpClient", RequestConfig.DEBUG));
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                Log.d("Minggo",message);
+            }
+        });
+
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        okHttpBuilder.addInterceptor(logging);
     }
     /**
      * 创建client
