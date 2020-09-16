@@ -1,6 +1,7 @@
 package com.zeus.vega.api.subcriber;
 
 import com.zeus.vega.api.exception.ApiException;
+import com.zeus.vega.api.exception.ResponseThrowable;
 import com.zeus.vega.model.Result;
 
 import java.lang.reflect.ParameterizedType;
@@ -76,6 +77,6 @@ public abstract class BaseApiSubscriber<T> extends DisposableObserver<Result<T>>
 
 
     protected abstract void onApiNext(T t);
-    protected abstract void onApiError(ApiException.ResponseThrowable responseThrowable);
+    protected abstract void onApiError(ResponseThrowable responseThrowable);
 
 }

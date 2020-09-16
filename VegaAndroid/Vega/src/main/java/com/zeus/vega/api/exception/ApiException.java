@@ -97,15 +97,4 @@ public class ApiException {
             return ex;
         }
     }
-
-
-    public static class ResponseThrowable extends Exception {
-        public int code;
-        public String message;
-    }
-
-    public class ServerException extends RuntimeException {
-        public int code;
-        public String message;
-    }
 }

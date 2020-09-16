@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import androidx.annotation.NonNull;
 
-import com.zeus.vega.api.exception.ApiException;
+import com.zeus.vega.api.exception.ResponseThrowable;
 
 import java.lang.ref.WeakReference;
 
@@ -35,7 +35,7 @@ public abstract class ApiAdapterSubscriber<T> extends BaseApiSubscriber<T> {
     }
 
     @Override
-    protected final void onApiError(ApiException.ResponseThrowable e) {
+    protected final void onApiError(ResponseThrowable e) {
         if (activityWeakReference != null && activityWeakReference.get() != null) {
             Activity activity = activityWeakReference.get();
             if (activity.isFinishing() || activity.isDestroyed()) {
@@ -47,5 +47,5 @@ public abstract class ApiAdapterSubscriber<T> extends BaseApiSubscriber<T> {
 
     protected abstract void onSuccess(T t);
 
-    protected abstract void onFailed(ApiException.ResponseThrowable e);
+    protected abstract void onFailed(ResponseThrowable e);
 }
