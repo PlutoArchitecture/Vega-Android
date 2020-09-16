@@ -44,7 +44,11 @@ public abstract class RequestSubscriber<T> extends BaseRequestSubscriber<T> {
         }
     }
 
-    protected abstract void onSuccess(T t);
+    protected void onSuccess(T t){
 
-    protected abstract void onFailed(ResponseThrowable e);
+    }
+
+    protected void onFailed(ResponseThrowable e){
+
+    }
 }
