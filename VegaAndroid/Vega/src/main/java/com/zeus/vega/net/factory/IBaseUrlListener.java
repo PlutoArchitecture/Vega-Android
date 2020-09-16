@@ -1,4 +1,4 @@
-package com.zeus.vega.api.factory;
+package com.zeus.vega.net.factory;
 
 import okhttp3.HttpUrl;
 import okhttp3.Request;

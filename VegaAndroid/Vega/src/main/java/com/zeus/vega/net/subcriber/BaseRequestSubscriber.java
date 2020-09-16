@@ -1,7 +1,7 @@
-package com.zeus.vega.api.subcriber;
+package com.zeus.vega.net.subcriber;
 
-import com.zeus.vega.api.exception.ApiException;
-import com.zeus.vega.api.exception.ResponseThrowable;
+import com.zeus.vega.net.exception.ApiException;
+import com.zeus.vega.net.exception.ResponseThrowable;
 import com.zeus.vega.model.Result;
 
 import java.lang.reflect.ParameterizedType;

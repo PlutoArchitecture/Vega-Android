@@ -1,4 +1,4 @@
-package com.zeus.vega.api.exception;
+package com.zeus.vega.net.exception;
 
 import android.net.ParseException;
 

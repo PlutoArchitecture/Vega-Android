@@ -1,4 +1,4 @@
-package com.zeus.vega.api.interceptor;
+package com.zeus.vega.net.interceptor;
 
 import android.text.TextUtils;
 

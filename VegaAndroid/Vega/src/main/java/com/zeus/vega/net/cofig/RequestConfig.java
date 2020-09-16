@@ -1,6 +1,6 @@
-package com.zeus.vega.api.cofig;
+package com.zeus.vega.net.cofig;
 
-import com.zeus.vega.api.factory.IBaseUrlListener;
+import com.zeus.vega.net.factory.IBaseUrlListener;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.zeus.vega.api;
+package com.zeus.vega.net;
 
-import com.zeus.vega.api.cofig.RequestConfig;
-import com.zeus.vega.api.factory.BaseUrlCallFactory;
-import com.zeus.vega.api.interceptor.LogInterceptor;
+import com.zeus.vega.net.cofig.RequestConfig;
+import com.zeus.vega.net.factory.BaseUrlCallFactory;
+import com.zeus.vega.net.interceptor.LogInterceptor;
 
 import java.util.concurrent.TimeUnit;
 

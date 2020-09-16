@@ -1,6 +1,6 @@
-package com.zeus.vega.api.factory;
+package com.zeus.vega.net.factory;
 
-import com.zeus.vega.api.cofig.RequestConfig;
+import com.zeus.vega.net.cofig.RequestConfig;
 
 import org.jetbrains.annotations.NotNull;
 

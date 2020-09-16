@@ -1,10 +1,10 @@
-package com.zeus.vega.api.subcriber;
+package com.zeus.vega.net.subcriber;
 
 import android.app.Activity;
 
 import androidx.annotation.NonNull;
 
-import com.zeus.vega.api.exception.ResponseThrowable;
+import com.zeus.vega.net.exception.ResponseThrowable;
 
 import java.lang.ref.WeakReference;
 

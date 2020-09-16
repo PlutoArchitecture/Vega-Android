@@ -1,4 +1,4 @@
-package com.zeus.vega.api.service;
+package com.zeus.vega.net.service;
 
 /**
  * 接口定义类
