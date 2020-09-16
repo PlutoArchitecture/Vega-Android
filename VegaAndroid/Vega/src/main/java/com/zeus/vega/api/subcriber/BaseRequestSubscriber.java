@@ -14,7 +14,7 @@ import io.reactivex.observers.DisposableObserver;
  * @author minggo(戴统民)
  * @date 2020/9/15
  */
-public abstract class BaseApiSubscriber<T> extends DisposableObserver<Result<T>> {
+public abstract class BaseRequestSubscriber<T> extends DisposableObserver<Result<T>> {
 
     @Override
     public final void onComplete() {

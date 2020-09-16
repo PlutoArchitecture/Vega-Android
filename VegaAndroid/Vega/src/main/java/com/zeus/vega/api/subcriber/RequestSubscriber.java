@@ -14,12 +14,12 @@ import java.lang.ref.WeakReference;
  * @author minggo(戴统民)
  * @date 2020/9/15
  */
-public abstract class ApiAdapterSubscriber<T> extends BaseApiSubscriber<T> {
+public abstract class RequestSubscriber<T> extends BaseApiSubscriber<T> {
 
     private WeakReference<Activity> activityWeakReference = null;
 
     @Deprecated
-    public ApiAdapterSubscriber(@NonNull Activity activity) {
+    public RequestSubscriber(@NonNull Activity activity) {
         activityWeakReference = new WeakReference<>(activity);
     }
 
